@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>Criar Análise</title>
+        <link rel="stylesheet" href="https://flaviane-moura.github.io/css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://flaviane-moura.github.io/js/passosTopsis.js"></script>
+        <script type="text/javascript" src="https://flaviane-moura.github.io/js/app.js"></script>
+        <meta charset='UTF-8'>
+    </head>
+    <body>
+         <div id='navbar'>
+            <img id="logo" src="imagens/unifal1.png" />
+            <div id="area">
+               <a href='index.html'>Home</a>
+                <a href='analise.html'>Criar Análise</a>                    
+    
+            </div>
+        </div>  
+        <div class='mascara' hidden></div>
+
+        <div class='window' hidden> 
+            <div id='resultadoTopSis'></div>
+        </div>
+
+        <br><br><br>    
+
+        <div class='container'>
+
+            <div id='content' class='content'>
+                <div class='configs'>
+                    <div class='area-crit-ite'>
+                        <div class="criterios">
+                            <button id="add-criterio" class="botao1" onclick="addCriterio();" title="Adicionar Criterio/SubCriterio">+ Critério</button>
+                            <div id='area-criterios'>
+                                
+                            </div>
+                       </div>
+
+                        <div id='itens' class='itens'>
+                            <button id='add-item' onclick='addItem();' class='botao1' title='Adicionar Item'>+ Item</button>
+                            <div id='area-itens'>
+                                <div id='texto-pdi'>
+                                    Vinculação ao PDI
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class='botao-run'>
+                        <button class='botao1' onclick='montarMatriz();' title='Montar Matriz de Dados'>Confirmar</button>
+                    </div>
+
+                </div>
+
+                <div class='matriz-info-holder' style='display: none' >
+                    <div class='info-container'>
+                        <div id='info-it' class='infos'>
+                            <label>Item</label></br>
+                        </div>
+
+                        <div id='info-cri' class='infos'>
+                            <label>Criterio</label></br>
+                        </div>
+
+                        <div id='info-pcri' class='infos'>
+                            <label>PesoCriterio</label></br>
+                        </div>
+
+                        <div id='info-importancia' class='infos'>
+                            <label>Importâncias</label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class='areaAnalises' id='area-analise'>
+                       
+                    </div>
+
+                    <div class='matriz-content'>
+                        <label class='lbl-criterio'>Critérios</label><br/>
+                        <label class='lbl-item'>Itens</label>
+                        <div class='areaMatriz' id='area-matriz'>
+                        </div>
+                        <div class='botao-run'>
+                            <button class='botao-edit' id='botao-edit-configs' onclick='showConfigsContent();'>Editar Configurações</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id='btn-execute' hidden>
+                    <a href="confirmar.html" target="_parent"></a>
+                    <button class='botao-run botao-edit botao1' onclick='runTopSis();'>Executar</button>
+                </div>
+
+                <br>
+
+                <div id='btn-import' >
+                    <form action='ajax.php' method='post' enctype='multipart/form-data'>
+                        <input type='file' class='botao1' name='upload' id='upload'><br> 
+                        <input type='submit' class='botao1' value='Enviar'> 
+                        <input type='reset' class='botao1' value='Apagar'>
+                    </form>
+                </div>
+
+                <br>
+                <div id='btn-export'  class='botao1'> 
+                    <a  href='gerarExcel.php' style='cursor:pointer'>Exportar para Download</a>
+                    </div>
+                </div><!-- fim content --> 
+        </div> <!-- fim container -->
+        <footer>
+            <div id="rodape">
+            <div id="areainfo">
+                  SEDE - ALFENAS <br/>
+                  Rua Gabriel Monteiro da Silva, 700<br/>  
+                  Centro - Alfenas/MG<br/>
+                  CEP: 37130-001<br/>
+            </div>
+            <div id="areacontato">
+                Telefone: (35) 3701-9000 <br/>
+                Portaria 1: (35) 3701-9140 <br/>
+                Portaria 2: (35) 3701-9141 <br/>
+            </div>
+            <div id="areaname">
+                <a href='https://www.unifal-mg.edu.br/portal/' target="_parent">Universidade Federal de Alfenas</a>
+            </div> 
+        </div>    
+        </footer>
+
+    </body>
+
+</html>
